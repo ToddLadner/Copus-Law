@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
     "postcss-each": "^1.1.0",
     "postcss-font-magician": "^3.0.0",
     "postcss-for": "^2.1.1",
