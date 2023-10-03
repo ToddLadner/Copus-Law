@@ -1,6 +1,4 @@
-@import "props.media.css";
-
-:where([data-theme="dark"], .dark, .dark-theme) {
+:where([data-theme='dark'], .dark, .dark-theme) {
   color-scheme: dark;
 
   --link: var(--indigo-3);
@@ -27,7 +25,7 @@
     --bg: var(--bg-dark);
     --ink-shadow: var(--ink-shadow-dark);
 
-    &:where([type="reset"]) {
+    &:where([type='reset']) {
       --text: var(--red-2);
       --border: var(--surface-3);
     }
@@ -36,7 +34,7 @@
   &
     :where(
       button,
-      input:is([type="button"], [type="submit"], [type="reset"])
+      input:is([type='button'], [type='submit'], [type='reset'])
     )[disabled] {
     --text: var(--gray-5);
   }
@@ -45,14 +43,14 @@
     :where(
       textarea,
       select,
-      input:not([type="button"], [type="submit"], [type="reset"])
+      input:not([type='button'], [type='submit'], [type='reset'])
     ) {
     background-color: hsl(210deg 11% 10%);
   }
 
-  & :where([type="submit"]),
-  & :where(form button:not([type="button"])),
-  & :where([type="reset"]),
+  & :where([type='submit']),
+  & :where(form button:not([type='button'])),
+  & :where([type='reset']),
   & :where([disabled]) {
     --bg: var(--surface-1);
   }

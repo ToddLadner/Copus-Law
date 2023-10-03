@@ -1,5 +1,3 @@
-@import "props.media.css";
-
 :where(html) {
   color-scheme: light;
 
@@ -32,7 +30,7 @@
     --bg: var(--bg-light);
     --ink-shadow: var(--ink-shadow-light);
 
-    & :where([type="reset"]) {
+    & :where([type='reset']) {
       --text: var(--red-6);
       --border: var(--red-3);
     }
@@ -41,7 +39,7 @@
   &
     :where(
       button,
-      input:is([type="button"], [type="submit"], [type="reset"])
+      input:is([type='button'], [type='submit'], [type='reset'])
     )[disabled] {
     --text: var(--gray-6);
   }
@@ -50,7 +48,7 @@
     :where(
       textarea,
       select,
-      input:not([type="button"], [type="submit"], [type="reset"])
+      input:not([type='button'], [type='submit'], [type='reset'])
     ) {
     background-color: var(--surface-2);
   }

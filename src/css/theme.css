@@ -1,7 +1,6 @@
-@import "props.media.css";
-@import "theme.light.css";
+@import 'theme-light.css';
 
-@media (--OSdark) {
+@media (prefers-color-scheme: dark) {
   :where(html) {
     color-scheme: dark;
 

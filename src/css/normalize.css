@@ -1,10 +1,14 @@
 @import 'reset.css';
 @import 'theme.css';
 @import 'brand.css';
-@import 'normalize.src.css';
+@import 'normalize-src.css';
 
-@media (--OSdark) {
-  :where(textarea, select, input:not([type='button'], [type='submit'], [type='reset'])) {
+@media (prefers-color-scheme: dark) {
+  :where(
+      textarea,
+      select,
+      input:not([type='button'], [type='submit'], [type='reset'])
+    ) {
     background-color: hsl(210 11% 10%);
   }
 
