@@ -18,6 +18,7 @@
 @import 'props-svg';
 @import 'brand.css';
 @import 'theme.css'; */
+
 main.container {
   padding-inline: max(1.5rem, calc(50vw - var(--size-content, 90em) / 2));
 }
