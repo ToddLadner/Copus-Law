@@ -3,7 +3,6 @@
 @import 'utilities.css';
 @import 'layout.css';
 
-/* 
 @import 'props-fonts.css';
 @import 'props-sizes.css';
 @import 'props-easing.css';
@@ -17,4 +16,4 @@
 @import 'props-highlights';
 @import 'props-svg';
 @import 'brand.css';
-@import 'theme.css'; */
+@import 'theme.css';
