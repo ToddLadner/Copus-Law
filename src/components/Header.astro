@@ -1,12 +1,212 @@
 ---
 
 ---
-<header class="header">
-  <h1>Header</h1>
+<header class="container">
+  <img
+    src="/src/assets/img/copus-law-logo.svg"
+    class="app-logo"
+    width="300"
+    alt="copus law logo"
+  />
+  <!-- Actions Container -->
+  <div class="actions-container">
+    <!--  -->
+    <ul class="contact-list">
+      <li class="contact-item">
+        <!-- <nuxt-icon name="clock-sharp-light" class="icon" /> -->
+        <span class="info">9:00 - 5:00</span>
+        <span class="description">Our opening hours Mon - Fri</span>
+      </li>
+      <li class="contact-item">
+        <nuxt-icon name="headset-light" class="icon" />
+        <span class="info">850-659-2230</span>
+        <span class="description">Call Us For Free Consultation</span>
+      </li>
+    </ul>
+    <!--  -->
+    <ul class="meta-list">
+      <li>
+        <a href="/custom" class="social">
+          <!-- <nuxt-icon name="facebook-f" class="icon-fb" /> -->
+          <span class="description">Facebook</span>
+        </a>
+      </li>
+      <li>
+        <a href="/custom" class="social">
+          <!-- <nuxt-icon name="linkedin-in" class="icon-li" /> -->
+          <span class="description">LinkedIn</span>
+        </a>
+      </li>
+      <li>
+        <a href="/custom" class="social">
+          <!-- <nuxt-icon name="lawyers-logo" filled class="icon-lw" /> -->
+          <span class="description">Lawyers.com</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </header>
 
 <style>
-  header {
-    background-color: red;
+  /* Header */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: var(--size-2) var(--size-2);
+    border-block-start: solid 2px var(--brand);
+  
+    @media (width >= 768px) {
+      flex-direction: row;
+      padding-block: var(--size-3);
+    }
   }
-</style>
+  /* Logo */
+  .app-logo {
+    width: 150px;
+    transform: translateX(45px);
+  
+    @media (width >= 768px) {
+      order: unset;
+      width: 200px;
+      transform: none;
+    }
+  
+    @media (width >= 1024px) {
+      width: 250px;
+    }
+  }
+  /* Push & Align Content */
+  .actions-container {
+    display: contents;
+  
+    @media (width >= 768px) {
+      display: flex;
+      margin-left: auto;
+    }
+  }
+  /* Law Firm Info */
+  :where(.contact-list, .meta-list) {
+    display: flex;
+    align-items: stretch;
+  
+    li {
+      padding-inline: var(--size-3);
+  
+      @media (width >= 768px) {
+        border-right: 1px solid #d9dcc9;
+      }
+    }
+  }
+  /* Common Styles */
+  .description {
+    color: var(--text-2);
+    line-height: var(--font-lineheight-00);
+    margin-top: auto;
+  }
+  /* Hours & Phone */
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-1);
+  
+    @media (width >= 480px) {
+      flex-direction: row;
+    }
+  
+    @media (width >= 768px) {
+      order: unset;
+      flex-direction: row;
+    }
+  }
+  
+  .contact-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--size-2);
+    row-gap: var(--size-1);
+    height: fit-content;
+    align-items: center;
+  
+    @media (width >= 768px) {
+      column-gap: var(--size-3);
+    }
+  
+    .icon {
+      grid-column: 1 / 2;
+      color: var(--brand);
+      size: var(--size-3);
+  
+      @media (width >= 768px) {
+        size: var(--size-6);
+      }
+    }
+  
+    .info {
+      grid-column: 2 / 3;
+      font-size: var(--font-size-0);
+      color: var(--text-1);
+  
+      @media (width >= 768px) {
+        font-size: var(--font-size-4);
+      }
+    }
+  
+    .description {
+      display: none;
+  
+      @media (width >= 768px) {
+        font-size: var(--font-size-0);
+        grid-column: 1 / 3;
+        display: inline-flex;
+      }
+    }
+  }
+  /* Social Media Links */
+  .meta-list {
+    order: 3;
+    display: none;
+  
+    @media (width >= 1024px) {
+      order: unset;
+      display: flex;
+    }
+  }
+  
+  .social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  
+    &:hover {
+      text-decoration: none;
+    }
+    :is(.icon-fb, .icon-li) {
+      color: var(--brand);
+    }
+    /* Nuxt Icon Override */
+    .icon-lw :deep(path),
+    .icon-lw :deep(circle) {
+      stroke: none;
+    }
+  
+    .nuxt-icon {
+      margin-block-start: var(--size-2);
+      size: var(--size-3);
+  
+      @media (width >= 768px) {
+        size: var(--size-4);
+      }
+    }
+  
+    .description {
+      font-size: var(--font-size-00);
+  
+      @media (width >= 768px) {
+        font-size: var(--font-size-0);
+      }
+    }
+  }
+  </style>
+  
