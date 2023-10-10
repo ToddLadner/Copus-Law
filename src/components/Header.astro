@@ -1,9 +1,10 @@
 ---
-
+import { Image } from "astro:assets";
+import logo from "../assets/img/copus-law-logo.svg"
 ---
 <header class="container">
   <img
-    src="/src/assets/img/copus-law-logo.svg"
+    src={logo.src}
     class="app-logo"
     width="300"
     alt="copus law logo"
