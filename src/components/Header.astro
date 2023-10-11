@@ -1,46 +1,46 @@
 ---
-import { Image } from "astro:assets";
 import logo from "../assets/img/copus-law-logo.svg"
+import { Icon } from 'astro-icon';
 ---
 <header class="container">
   <img
     src={logo.src}
-    class="app-logo"
+    class="logo"
     width="300"
     alt="copus law logo"
   />
   <!-- Actions Container -->
   <div class="actions-container">
-    <!--  -->
+    <!-- Contact -->
     <ul class="contact-list">
       <li class="contact-item">
-        <!-- <nuxt-icon name="clock-sharp-light" class="icon" /> -->
+        <Icon name="clock-sharp-light" class="icon" />
         <span class="info">9:00 - 5:00</span>
         <span class="description">Our opening hours Mon - Fri</span>
       </li>
       <li class="contact-item">
-        <nuxt-icon name="headset-light" class="icon" />
+        <Icon name="headset-light" class="icon" />
         <span class="info">850-659-2230</span>
         <span class="description">Call Us For Free Consultation</span>
       </li>
     </ul>
-    <!--  -->
-    <ul class="meta-list">
-      <li>
-        <a href="/custom" class="social">
-          <!-- <nuxt-icon name="facebook-f" class="icon-fb" /> -->
+    <!-- Social -->
+    <ul class="social-list">
+      <li class="social-item">
+        <a href="/" class="social">
+          <Icon name="facebook-f" class="icon icon-fb" />
           <span class="description">Facebook</span>
         </a>
       </li>
-      <li>
-        <a href="/custom" class="social">
-          <!-- <nuxt-icon name="linkedin-in" class="icon-li" /> -->
+      <li class="social-item">
+        <a href="/" class="social">
+          <Icon name="linkedin-in" class="icon icon-li" />
           <span class="description">LinkedIn</span>
         </a>
       </li>
-      <li>
-        <a href="/custom" class="social">
-          <!-- <nuxt-icon name="lawyers-logo" filled class="icon-lw" /> -->
+      <li class="social-item">
+        <a href="/" class="social">
+          <Icon name="lawyers-logo" filled class="icon icon-lw" />
           <span class="description">Lawyers.com</span>
         </a>
       </li>
@@ -50,7 +50,7 @@ import logo from "../assets/img/copus-law-logo.svg"
 
 <style>
   /* Header */
-  .container {
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,7 +63,7 @@ import logo from "../assets/img/copus-law-logo.svg"
     }
   }
   /* Logo */
-  .app-logo {
+  .logo {
     width: 150px;
     transform: translateX(45px);
   
@@ -87,7 +87,7 @@ import logo from "../assets/img/copus-law-logo.svg"
     }
   }
   /* Law Firm Info */
-  :where(.contact-list, .meta-list) {
+  :where(.contact-list, .social-list) {
     display: flex;
     align-items: stretch;
   
@@ -99,12 +99,14 @@ import logo from "../assets/img/copus-law-logo.svg"
       }
     }
   }
+
   /* Common Styles */
   .description {
     color: var(--text-2);
     line-height: var(--font-lineheight-00);
     margin-top: auto;
   }
+
   /* Hours & Phone */
   .contact-list {
     display: flex;
@@ -164,7 +166,7 @@ import logo from "../assets/img/copus-law-logo.svg"
     }
   }
   /* Social Media Links */
-  .meta-list {
+  .social-list {
     order: 3;
     display: none;
   
@@ -183,16 +185,13 @@ import logo from "../assets/img/copus-law-logo.svg"
     &:hover {
       text-decoration: none;
     }
+
     :is(.icon-fb, .icon-li) {
-      color: var(--brand);
+      fill: var(--brand);
     }
-    /* Nuxt Icon Override */
-    .icon-lw :deep(path),
-    .icon-lw :deep(circle) {
-      stroke: none;
-    }
+
   
-    .nuxt-icon {
+    .icon {
       margin-block-start: var(--size-2);
       size: var(--size-3);
   
