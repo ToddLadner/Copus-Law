@@ -1,0 +1,133 @@
+---
+
+---
+<nav class="container">
+  <div class="nav-list-wrapper">
+    <ul class="nav-list">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/">Attorney profiles</a>
+      </li>
+      <li>
+        <a href="/">Practice Areas</a>
+      </li>
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+      <li>
+        <a href="/">Contact us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .container {
+    background-color: hsl(40, 60%, 98%);
+    border-block-start: 1px solid #d9dcc9;
+  
+    @media (width >= 768px) {
+    }
+  }
+  
+  @media (width <= 768px) {
+    .nav-list-wrapper {
+      position: fixed;
+      inset: 0;
+      z-index: 123456;
+      background-color: gray;
+      /* https://easings.net/#easeOutBack */
+      transition: rotate 300ms cubic-bezier(0.36, 0, 0.66, -0.56);
+  
+      rotate: -90deg;
+      transform-origin: top left;
+      li {
+        justify-content: center;
+      }
+      &.is-visible {
+        /* https://easings.net/#easeInBack */
+        transition: rotate 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+        rotate: 0deg;
+        li {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transform: translate3d(0, 3rem, 0);
+    inset-block-start: 2rem;
+    z-index: -1;
+  
+    @media (width >= 768px) {
+      position: relative;
+      flex-direction: row;
+      inset: unset;
+      z-index: unset;
+      transform: none;
+    }
+  
+    li {
+      display: flex;
+      align-items: center;
+      padding-inline: 0;
+  
+      /* Flourish */
+      &:not(:last-child)::after {
+        font-size: var(--font-size-00);
+        content: '\2666';
+        display: block;
+        color: var(--brand);
+        position: relative;
+        left: 1px;
+      }
+    }
+  
+    a {
+      position: relative;
+      text-decoration: none;
+      color: var(--text-1);
+      padding-block: var(--size-3);
+      padding-inline: var(--size-3);
+      /* text-underline-offset: var(--size-4); */
+  
+      &::before {
+        display: block;
+        bottom: 0;
+        position: absolute;
+        width: calc(100% - 2rem);
+        margin-inline: auto;
+        inset-inline: 0;
+        height: 0.2em;
+        background-color: var(--brand);
+      }
+  
+      &:hover::before {
+        content: '';
+        /* --decoration-color: var(--brand); */
+      }
+  
+      &.router-link-active::before {
+        content: '';
+        /* text-decoration: underline;
+        text-decoration-thickness: 0.2em;
+        text-decoration-color: var(--brand); */
+      }
+    }
+  }
+  
+  /* */
+  .nav-toggle {
+    position: fixed;
+    inset-block-start: 8px;
+    inset-inline-start: 8px;
+    z-index: 123546;
+  }
+  </style>
+  
