@@ -1,4 +1,26 @@
 ---
+import { Image } from 'astro:assets';
+import ladyJustice from "../assets/img/lady-justice.png";
+
+
+const slides = [
+  {
+    title: 'Title one',
+    image: ladyJustice,
+    description: 'Description one'
+  },
+  {
+    title: 'Title two',
+    image: ladyJustice,
+    description: 'Description one'
+  },
+  {
+    title: 'Title three',
+    image: ladyJustice,
+    description: 'Description one'
+  },
+]
+
 ---
 <style>
 .swiper {
@@ -19,12 +41,39 @@
   space-between="30" 
   mousewheel="true"
 >
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-  <swiper-slide>Slide 4</swiper-slide>
-  <swiper-slide>Slide 5</swiper-slide>
-  <swiper-slide>Slide 6</swiper-slide>
+{slides.map((slide) => (
+  <swiper-slide>
+    <svg
+      viewBox="0 0 100 100"
+      class="years-experience"
+      width="100"
+      height="100"
+    >
+      <defs>
+        <path
+          id="circle"
+          d="M 50, 50m -37, 0a 37,37 0 1,1 74,0a 37,37 0 1,1 -74,0"
+        />
+      </defs>
+      <text
+        font-size="30"
+        class="years"
+        transform="matrix(1 0 0 1 32 57)"
+      >
+        40
+      </text>
+      <text font-size="12">
+        <textPath href="#circle">
+          years of combined legal practice
+        </textPath>
+      </text>
+    </svg>
+    <p class="tagline">Accomplished. Experienced. Thorough.</p>
+    <h1 class="heading">{ slide.title } </h1>
+    <Image src={ slide.image } alt="a statue of the lady justice holding scales"/>
+    <p class="description"> {slide.description} </p>
+  </swiper-slide>
+  ))}
 </swiper-container>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
