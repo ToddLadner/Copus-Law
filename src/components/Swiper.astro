@@ -23,10 +23,63 @@ const slides = [
 
 ---
 <style>
-.swiper {
+/* .swiper {
   width: 100%;
   height: 300px;
   background-color: red;
+} */
+swiper-slide {
+ 
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  padding-block-start: var(--size-9);
+  position: relative;
+
+  :where(.heading, .description) {
+    color: white;
+  }
+
+  > * {
+    flex: 1;
+  }
+
+  .heading {
+    font-family: MerriweatherItalic;
+  }
+  .description {
+  }
+
+  img {
+    width: 100%;
+    max-width: 520px;
+    align-self: flex-end;
+  }
+}
+/* Years Experience */
+.years-experience {
+  position: absolute;
+  inset-block-start: var(--size-7);
+}
+.years {
+  fill: white;
+  stroke: none;
+  font-family: 'MerriweatherItalic';
+}
+textPath {
+  fill: white;
+  stroke: none;
+  letter-spacing: 1.4px;
+}
+/* Tagline */
+.tagline {
+  color: white;
+  position: absolute;
+  font-size: var(--font-size-1);
+  inset-block-start: var(--size-8);
+  inset-inline-end: var(--size-5);
+  font-family: 'MerriweatherItalic';
+  letter-spacing: 0.03em;
 }
 </style>
 
@@ -42,7 +95,7 @@ const slides = [
   mousewheel="true"
 >
 {slides.map((slide) => (
-  <swiper-slide>
+  <swiper-slide class="container">
     <svg
       viewBox="0 0 100 100"
       class="years-experience"
@@ -73,7 +126,7 @@ const slides = [
     <Image src={ slide.image } alt="a statue of the lady justice holding scales"/>
     <p class="description"> {slide.description} </p>
   </swiper-slide>
-  ))}
+))}
 </swiper-container>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
