@@ -14,7 +14,6 @@ specifiers:
   postcss-import: ^15.1.0
   postcss-preset-env: ^9.1.4
   postcss-size: ^4.0.1
-  swiper: ^10.3.1
 
 dependencies:
   '@astrojs/netlify': 3.0.2_astro@3.2.4
@@ -32,7 +31,6 @@ dependencies:
 
 devDependencies:
   astro-icon: 0.8.1
-  swiper: 10.3.1
 
 packages:
 
@@ -4440,11 +4438,6 @@ packages:
       csso: 4.2.0
       picocolors: 1.0.0
       stable: 0.1.8
-    dev: true
-
-  /swiper/10.3.1:
-    resolution: {integrity: sha512-24Wk3YUdZHxjc9faID97GTu6xnLNia+adMt6qMTZG/HgdSUt4fS0REsGUXJOgpTED0Amh/j+gRGQxsLayJUlBQ==}
-    engines: {node: '>= 4.7.0'}
     dev: true
 
   /tar-fs/2.1.1:

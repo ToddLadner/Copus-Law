@@ -33,7 +33,6 @@
     "postcss-for": "^2.1.1",
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^9.1.4",
-    "postcss-size": "^4.0.1",
-    "swiper": "^10.3.1"
+    "postcss-size": "^4.0.1"
   }
 }
