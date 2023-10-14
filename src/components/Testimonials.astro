@@ -1,0 +1,97 @@
+---
+import { Icon } from 'astro-icon';
+
+const testimonials = [
+  {
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    author: 'Firstname Lastname',
+    color: 'white',
+  },
+  {
+    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    author: 'Firstname Lastname',
+    color: 'white',
+  },
+  {
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    author: 'Firstname Lastname',
+    color: 'white',
+  },
+  {
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    author: 'Firstname Lastname',
+    color: 'white',
+  },
+  {
+    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    author: 'Firstname Lastname',
+    color: 'white',
+  },
+  {
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    author: 'Firstname Lastname',
+    color: 'white',
+  },
+]
+---
+
+<style>
+  /* Testimonials */
+  .testimonials {
+    padding-block: var(--size-fluid-4);
+  
+    header {
+      width: fit-content;
+      margin-inline: auto;
+    }
+    .slide-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #d9dcc9;
+      border-radius: 3rem;
+      padding: var(--size-fluid-4);
+    }
+    .icon {
+      size: 3rem;
+      color: #d9dbc9;
+    }
+  }
+  
+  .author {
+    color: var(--brand);
+  }
+  .wrap {
+    /* padding-inline: 9rem; */
+  }
+  :deep(.swiper-wrapper) {
+    align-items: stretch;
+  }
+  :deep(.swiper) {
+    padding-block-end: var(--size-fluid-4);
+  }
+  </style>
+  
+
+<swiper-container
+  class="swiper"
+  slides-per-view="3" 
+  slides-per-group="3" 
+  speed="500" 
+  loop="true" 
+  css-mode="true"
+  pagination="true" 
+  pagination-clickable="true" 
+  space-between="30" 
+  mousewheel="true"
+>
+{testimonials.map((testimonial) => (
+  <swiper-slide>
+    <Icon name="quote-left-solid" class="icon" />
+    <p class="testimonial">{ testimonial.text }</p>
+    <span class="author">{ testimonial.author }</span>
+  </swiper-slide>
+))}
+</swiper-container>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>

@@ -20,7 +20,6 @@ const slides = [
     description: 'Description one'
   },
 ]
-
 ---
 <style>
 /* .swiper {
@@ -103,10 +102,7 @@ textPath {
       height="100"
     >
       <defs>
-        <path
-          id="circle"
-          d="M 50, 50m -37, 0a 37,37 0 1,1 74,0a 37,37 0 1,1 -74,0"
-        />
+        <path id="circle" d="M 50, 50m -37, 0a 37,37 0 1,1 74,0a 37,37 0 1,1 -74,0" />
       </defs>
       <text
         font-size="30"
@@ -122,9 +118,9 @@ textPath {
       </text>
     </svg>
     <p class="tagline">Accomplished. Experienced. Thorough.</p>
-    <h1 class="heading">{ slide.title } </h1>
+    <h1 class="heading">{ slide.title }</h1>
     <Image src={ slide.image } alt="a statue of the lady justice holding scales"/>
-    <p class="description"> {slide.description} </p>
+    <p class="description">{ slide.description }</p>
   </swiper-slide>
 ))}
 </swiper-container>

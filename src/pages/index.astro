@@ -1,12 +1,50 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import Swiper from '../components/Swiper.astro';
+import { Image } from 'astro:assets';
+import HeroSwiper from '../components/HeroSwiper.astro';
+import Testimonials from '../components/Testimonials.astro';
+import { Icon } from 'astro-icon';
+
+import monalisa from "../assets/img/monalisa.jpg";
+
+const practices = [
+  {
+    icon: 'family-light',
+    title: 'Family Law',
+    description: 'Representation in civil family law.',
+    link: '/custom.vue',
+    linkText: 'learn more',
+  },
+  {
+    icon: 'house-heart-light',
+    title: 'Estate Planning',
+    description: 'Representation in Estate Planning.',
+    link: '/',
+    linkText: 'learn more',
+  },
+  {
+    icon: 'scale-balanced-light',
+    title: 'Cilvil Litigation',
+    description: 'Representation in civil litigation cases.',
+    link: '/',
+    linkText: 'learn more',
+  },
+  {
+    icon: 'gavel-light',
+    title: 'Mediation',
+    description: 'Representation in civil Mediation cases.',
+    link: '/',
+    linkText: 'learn more',
+  },
+]
 ---
 
 <Layout title="Welcome to Astro.">
-	<Swiper />
-	<main>
+	<!-- Hero Swiper -->
+	<HeroSwiper />
+	
+	<main id="main">
 		<!-- Intro -->
 		<article class="intro container">
 			<header class="flow">
@@ -42,6 +80,62 @@ import Swiper from '../components/Swiper.astro';
 			</div>
 		</article>
 		
+		<!-- practice-areas -->
+		<article class="practice-areas container flow">
+			<header class="flow">
+				<span class="subhead color-brand">Our Services</span>
+				<h2 class="heading">Areas of practice</h2>
+			</header>
+			
+			<ul class="practices">
+				{practices.map((practice) => (
+					<li class="flow">
+						<Icon name={ practice.icon } class="icon" />
+						<strong class="title">{ practice.title }</strong>
+						<p class="description">
+							{ practice.description }
+						</p>
+						<a href="/">{ practice.linkText }</a>
+					</li>
+				))}
+			</ul>
+		</article>
+		
+		<!-- practice-areas -->
+		<article class="the-team">
+			<div class="image">
+				<Image src={monalisa} alt="The team of Copus law"/>
+			</div>
+			<div class="content flow">
+				<header class="flow">
+					<span class="subhead">Our Team</span>
+					<h2>Meet Our Professional Team</h2>
+				</header>
+				<p>
+					Whether you require guidance in corporate law, civil litigation,
+					criminal defense, family law, or any other legal matter, our firm offers
+					a wide range of practice areas, ensuring that we can effectively
+					navigate the complexities of your case. We are committed to protecting
+					your rights, achieving favorable outcomes, and delivering justice with
+					compassion and professionalism.
+				</p>
+				<button>Learn more</button>
+			</div>
+		</article>
+
+		<!-- practice-areas -->
+		<article class="testimonials container">
+			<header class="flow">
+				<span class="subhead">Testimonials</span>
+				<h2>Our Happy Clients</h2>
+			</header>
+			<Testimonials />
+		</article>
+
+		<!-- -->
+
+		
+		<!-- -->
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
@@ -68,8 +162,6 @@ import Swiper from '../components/Swiper.astro';
 </Layout>
 
 <style>
-	/* Slider */
-	
 	/* Intro */
 	.intro {
 		display: grid;
@@ -79,6 +171,72 @@ import Swiper from '../components/Swiper.astro';
 		padding-block: var(--size-fluid-5);
 	
 		.heading {
+		}
+		.description {
+		}
+	}
+
+	/* Practice Areas */
+	.practice-areas {
+		background-color: #fff;
+		border-block: 1px solid #d9dcc9;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-block: var(--size-fluid-5);
+	}
+
+	.practices {
+		display: flex;
+		block-size: auto;
+		overflow-x: auto;
+		overflow-y: hidden;
+		--flow-space: 3rem;
+
+		li {
+			display: flex;
+			flex: 0 0 auto;
+			flex-direction: column;
+			align-items: center;
+			padding-block: var(--size-5);
+			padding-inline: var(--size-8);
+			--flow-space: 0.5rem;
+		}
+
+		/* Border */
+		li:not(:last-child) {
+			border-right: 1px solid #d9dcc9;
+		}
+
+		.icon {
+			size: var(--size-8);
+		}
+
+		.title {
+			--flow-space: 1.25rem;
+		}
+
+		.description {
+			font-size: var(--font-size-0);
+			max-width: var(--size-content-1);
+			text-align: center;
+		}
+	}
+
+	/* The Team */
+	.the-team {
+		display: flex;
+		flex-wrap: wrap;
+		background-color: var(--brand);
+		color: white;
+
+		> * {
+			flex: 1 0 50%;
+			min-width: 300px;
+		}
+
+		.content {
+			padding: var(--size-fluid-5);
 		}
 		.description {
 		}
