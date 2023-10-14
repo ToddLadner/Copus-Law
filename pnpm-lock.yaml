@@ -29,10 +29,10 @@ dependencies:
   postcss-import: 15.1.0_postcss@8.4.31
   postcss-preset-env: 9.2.0_postcss@8.4.31
   postcss-size: 4.0.1_postcss@8.4.31
+  swiper: 10.3.1
 
 devDependencies:
   astro-icon: 0.8.1
-  swiper: 10.3.1
 
 packages:
 
@@ -4445,7 +4445,7 @@ packages:
   /swiper/10.3.1:
     resolution: {integrity: sha512-24Wk3YUdZHxjc9faID97GTu6xnLNia+adMt6qMTZG/HgdSUt4fS0REsGUXJOgpTED0Amh/j+gRGQxsLayJUlBQ==}
     engines: {node: '>= 4.7.0'}
-    dev: true
+    dev: false
 
   /tar-fs/2.1.1:
     resolution: {integrity: sha512-V0r2Y9scmbDRLCNex/+hYzvp/zyYjvFbHPNgVTKfQvVrb6guiE/fxP+XblDNR011utopbkex2nM4dHNV6GDsng==}

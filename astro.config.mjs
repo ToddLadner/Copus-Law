@@ -7,6 +7,6 @@ import sitemap from '@astrojs/sitemap'
 export default defineConfig({
   output: 'server',
   adapter: netlify(),
-  // TODO => site: 'https://stargazers.club',
-  // integrations: [sitemap()],
+  site: 'https://www.copuslaw.com/',
+  integrations: [sitemap()],
 })
