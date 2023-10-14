@@ -8,5 +8,5 @@ export default defineConfig({
   output: 'server',
   adapter: netlify(),
   // TODO => site: 'https://stargazers.club',
-  integrations: [sitemap()],
+  // integrations: [sitemap()],
 })
